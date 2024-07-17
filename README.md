@@ -17,9 +17,7 @@
 
 - Finally, the script [train.py](train.py) trains the two major tokenizers on the input text [tests/taylorswift.txt](tests/taylorswift.txt) (this is the Wikipedia entry for her kek) and saves the vocab to disk for visualization. 
 
-All of the files above are very short and thoroughly commented, and also contain a usage example on the bottom of the file.
-
-### quick start(usage example) 
+### Quick start(usage example) 
 - As the simplest example, we can reproduce the [Wikipedia article on BPE](https://en.wikipedia.org/wiki/Byte_pair_encoding). According to Wikipedia, running bpe on the input string: "aaabdaaabac" for 3 merges results in the string: "XdXac" where  X=ZY, Y=ab, and Z=aa. The tricky thing to note is that minbpe always allocates the 256 individual bytes as tokens, and then merges bytes as needed from there. So for us a=97, b=98, c=99, d=100 (their [ASCII](https://www.asciitable.com) values). Then when (a,a) is merged to Z, Z will become 256. Likewise Y will become 257 and X 258. So we start with the 256 bytes, and do 3 merges to get to the result above, with the expected output of [258, 100, 258, 97, 99].
 ```python
 from minbpe import BasicTokenizer
@@ -34,7 +32,7 @@ tokenizer.save("toy")
 # writes two files: toy.model (for loading) and toy.vocab (for viewing)
 ```
 
-#### inference: GPT-4 comparison
+### Inference: GPT-4 comparison
 
 - We can verify that the `RegexTokenizer` has feature parity with the GPT-4 tokenizer from [tiktoken](https://github.com/openai/tiktoken) as follows:
 
