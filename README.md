@@ -1,12 +1,11 @@
-# Project1 Implement GPT From Scratch:
+# Project1: Implement GPT From Scratch
 - Implement GPT from Scratch and take data from input.txt file and train as a next word prediction
 - Our GPT model successful Trained and generate Sentences
 ![alt text](image.png)
 ![alt text](image-1.png)
-# Project2 Tmplement Tokenizer(BPE)
-![alt text](<Screenshot 2024-07-17 174902.png>)
+# Project2: Implement Tokenizer(BPE)
 - Minimal, clean code for the (byte-level) Byte Pair Encoding (BPE) algorithm commonly used in LLM tokenization. The BPE algorithm is "byte-level" because it runs on UTF-8 encoded strings.
-
+![alt text](<Screenshot 2024-07-17 174902.png>)
 - This algorithm was popularized for LLMs by the [GPT-2 paper](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) and the associated GPT-2 [code release](https://github.com/openai/gpt-2) from OpenAI. [Sennrich et al. 2015](https://arxiv.org/abs/1508.07909) is cited as the original reference for the use of BPE in NLP applications. Today, all modern LLMs (e.g. GPT, Llama, Mistral) use this algorithm to train their tokenizers.
 
 - There are two Tokenizers in this repository, both of which can perform the 3 primary functions of a Tokenizer: 1) train the tokenizer vocabulary and merges on a given text, 2) encode from text to tokens, 3) decode from tokens to text. The files of the repo are as follows:
